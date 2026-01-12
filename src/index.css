@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= GOOGLE FONTS ================= */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ================= BASE THEME ================= */
+@layer base {
+  :root {
+    /* ===== BACKGROUND & TEXT ===== */
+    --background: 36 100% 97%;        /* Cream */
+    --foreground: 25 30% 18%;         /* Cocoa */
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 18%;
+
+    /* ===== BRAND COLORS ===== */
+    --primary: 345 75% 55%;           /* Strawberry Pink */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 60% 90%;          /* Vanilla */
+    --secondary-foreground: 25 30% 18%;
+
+    --accent: 28 80% 55%;             /* Caramel */
+    --accent-foreground: 0 0% 100%;
+
+    /* ===== MUTED ===== */
+    --muted: 36 40% 88%;
+    --muted-foreground: 25 20% 40%;
+
+    /* ===== STATUS ===== */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* ===== BORDERS & INPUT ===== */
+    --border: 36 30% 85%;
+    --input: 36 30% 85%;
+    --ring: 345 75% 55%;
+
+    --radius: 0.75rem;
+
+    /* ===== CUSTOM CAKE TOKENS ===== */
+    --pink: 345 75% 55%;
+    --pink-light: 345 85% 70%;
+    --caramel: 28 80% 55%;
+    --chocolate: 25 30% 18%;
+    --cream: 36 100% 97%;
+
+    /* ===== GRADIENTS ===== */
+    --gradient-cake: linear-gradient(
+      135deg,
+      hsl(345, 75%, 55%),
+      hsl(28, 80%, 55%)
+    );
+
+    --gradient-soft: linear-gradient(
+      180deg,
+      hsl(36, 100%, 97%),
+      hsl(36, 80%, 94%)
+    );
+
+    /* ===== SHADOWS ===== */
+    --shadow-soft: 0 10px 30px hsla(25, 30%, 18%, 0.08);
+    --shadow-pink: 0 8px 25px hsla(345, 75%, 55%, 0.35);
+  }
+
+  /* ===== DARK MODE (CHOCOLATE 🍫) ===== */
+  .dark {
+    --background: 25 30% 12%;
+    --foreground: 36 100% 96%;
+
+    --card: 25 30% 16%;
+    --card-foreground: 36 100% 96%;
+
+    --primary: 345 75% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 25% 22%;
+    --secondary-foreground: 36 100% 96%;
+
+    --muted: 25 25% 20%;
+    --muted-foreground: 36 20% 70%;
+
+    --accent: 28 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 25 25% 22%;
+    --input: 25 25% 22%;
+    --ring: 345 75% 60%;
+  }
+
+  /* ===== GLOBAL RESET ===== */
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Poppins", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* ================= COMPONENTS ================= */
+@layer components {
+  .section-title {
+    @apply text-sm uppercase tracking-widest text-primary font-medium mb-2;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  /* ===== PRIMARY BUTTON ===== */
+  .btn-gold {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full
+           transition-all duration-300
+           hover:bg-[hsl(345,85%,65%)]
+           hover:shadow-[0_8px_25px_hsla(345,75%,55%,0.35)]
+           active:scale-95;
+  }
+
+  /* ===== OUTLINE BUTTON ===== */
+  .btn-outline-gold {
+    @apply border-2 border-primary text-primary font-semibold px-8 py-3 rounded-full
+           transition-all duration-300
+           hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-md border border-border rounded-2xl shadow-lg;
+  }
+
+  .input-elegant {
+    @apply bg-secondary border border-border rounded-lg px-4 py-3
+           text-foreground placeholder:text-muted-foreground
+           focus:outline-none focus:ring-2 focus:ring-primary/40
+           transition-all duration-300;
+  }
+}
+
+/* ================= UTILITIES ================= */
+@layer utilities {
+  .text-gradient-cake {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
