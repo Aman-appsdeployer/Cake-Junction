@@ -8,11 +8,9 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 /* ================= IMAGES ================= */
-import  heroImage  from "@/assets/img3.jpg";
 import about3 from "@/assets/img1.jpg";
-import about1 from "@/assets/img3.jpg";
-import about2 from "@/assets/img3.jpg";
-import about4 from "@/assets/venue-4.jpg"
+import { default as about1, default as about2, default as heroImage } from "@/assets/img3.jpg";
+import about4 from "@/assets/venue-4.jpg";
 
 /* ================= DATA ================= */
 const features = [
@@ -96,7 +94,7 @@ const About = () => {
             alt="Cake Junction Bakery"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pt-32">

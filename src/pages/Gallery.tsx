@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 /* ================= IMAGES ================= */
-import galleryHeroImage from "@/assets/img4.jpg";
+import galleryHeroImage from "@/assets/img3.jpg";
 
 import cake1 from "@/assets/img1.jpg";
-import cake2 from "@/assets/img2.jpg";
+import { default as cake2, default as cake6 } from "@/assets/img2.jpg";
 import cake3 from "@/assets/img3.jpg";
 import cake4 from "@/assets/img5.jpg";
 import cake5 from "@/assets/img6.jpg";
-import cake6 from "@/assets/img2.jpg";
 
 /* ================= FEATURED WORK ================= */
 const ourWorkImages = [
@@ -53,39 +52,54 @@ const Gallery = () => {
 
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={galleryHeroImage}
-            alt="Cake Junction Gallery"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
-        </div>
+  {/* BACKGROUND */}
+  <div className="absolute inset-0">
+    <img
+      src={galleryHeroImage}
+      alt="Cake Junction Cake Gallery"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r" />
+  </div>
 
-        <div className="relative z-10 container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <p className="section-title">Our Creations</p>
+  {/* CONTENT */}
+  <div className="relative z-10 container mx-auto px-4 pt-24">
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7 }}
+      className="max-w-3xl"
+    >
+      {/* BADGE */}
+      <span className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+        Our Cake Creations
+      </span>
 
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-              Cake <span className="text-gradient-gold">Gallery</span>
-            </h1>
+      {/* HEADING */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
+        Cake <span className="text-gradient-gold">Gallery</span>
+      </h1>
 
-            <p className="text-muted-foreground max-w-xl mb-10">
-              Explore our handcrafted cakes and desserts made for every
-              celebration and special moment.
-            </p>
+      {/* DESCRIPTION */}
+      <p className="text-muted-foreground text-base sm:text-lg max-w-xl mb-10 leading-relaxed">
+        Take a look at our handcrafted cakes, custom designs, and dessert
+        creations made for birthdays, weddings, and unforgettable celebrations.
+      </p>
 
-            <a href="#category-gallery" className="btn-gold">
-              Explore Cakes
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA */}
+      <div className="flex flex-wrap gap-4">
+        <a href="#category-gallery" className="btn-gold">
+          Explore Our Cakes
+        </a>
+
+        <a href="/contact" className="btn-outline-gold">
+          Order a Custom Cake
+        </a>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* ================= FEATURED WORK ================= */}
       <section className="py-24 bg-background">

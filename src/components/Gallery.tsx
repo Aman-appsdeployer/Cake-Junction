@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 
-import cake1 from "@/assets/venue-4.jpg";
 import cake2 from "@/assets/img3.jpg";
 import cake3 from "@/assets/img4.jpg";
-import cake4 from "@/assets/venue-1.jpg";
-import cake5 from "@/assets/venue-2.jpg";
-import cake6 from "@/assets/venue-4.jpg";
+import { default as cake4, default as cake5 } from "@/assets/venue-1.jpg";
+import { default as cake1, default as cake6 } from "@/assets/venue-4.jpg";
 
 const images = [
   { src: cake1, alt: "Chocolate Cake" },

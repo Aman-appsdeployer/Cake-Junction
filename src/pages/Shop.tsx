@@ -10,12 +10,9 @@ import {
 } from "lucide-react";
 
 /* ================= IMAGES ================= */
-import birthdayCake from "@/assets/img1.jpg";
-import corporateCake from "@/assets/img3.jpg";
-import cupcakes from "@/assets/venue-4.jpg";
+import { default as birthdayCake, default as corporateCake } from "@/assets/img3.jpg";
 import dessertTable from "@/assets/img6.jpg";
-import weddingCake from "@/assets/venue-4.jpg";
-import customCake from "@/assets/venue-4.jpg";
+import { default as cupcakes, default as customCake, default as weddingCake } from "@/assets/venue-4.jpg";
 
 /* ================= DATA ================= */
 const shopItems = [
@@ -62,14 +59,14 @@ const Shop = () => {
     <main className="overflow-x-hidden">
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[90vh] flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
           <img
             src={birthdayCake}
             alt="Shop Cakes"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 " />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pt-28 text-white">

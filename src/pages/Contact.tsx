@@ -91,7 +91,7 @@ const Contact = () => {
             alt="Contact Cake Junction"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 " />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pt-24">

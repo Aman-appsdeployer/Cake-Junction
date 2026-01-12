@@ -1,22 +1,12 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Shop Cakes", href: "/shop" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
-];
-
-const services = [
-  "Birthday Cakes",
-  "Wedding Cakes",
-  "Custom Cakes",
-  "Corporate Orders",
-  "Dessert Tables",
-];
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `transition text-sm
+     ${isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-primary"}
+    `;
+
   return (
     <footer className="bg-background border-t py-16">
       <div className="container mx-auto px-4">
@@ -25,12 +15,11 @@ const Footer = () => {
 
           {/* BRAND */}
           <div>
-            <a href="/" className="text-2xl font-serif font-bold">
+            <NavLink to="/" className="text-2xl font-serif font-bold">
               Cake <span className="text-primary">Junction</span>
-            </a>
+            </NavLink>
             <p className="text-sm text-muted-foreground mt-4">
-              Freshly baked cakes crafted with premium ingredients.
-              Making every celebration sweeter.
+              Freshly baked cakes made with premium ingredients for every celebration.
             </p>
           </div>
 
@@ -38,16 +27,11 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {quickLinks.map(link => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li><NavLink to="/" className={linkClass}>Home</NavLink></li>
+              <li><NavLink to="/about" className={linkClass}>About</NavLink></li>
+              <li><NavLink to="/shop" className={linkClass}>Shop</NavLink></li>
+              <li><NavLink to="/gallery" className={linkClass}>Gallery</NavLink></li>
+              <li><NavLink to="/contact" className={linkClass}>Contact</NavLink></li>
             </ul>
           </div>
 
@@ -55,41 +39,31 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-bold mb-4">Our Cakes</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {services.map(service => (
-                <li key={service}>{service}</li>
-              ))}
+              <li>Birthday Cakes</li>
+              <li>Wedding Cakes</li>
+              <li>Custom Cakes</li>
+              <li>Corporate Orders</li>
             </ul>
           </div>
 
           {/* CONTACT */}
           <div>
             <h4 className="font-serif font-bold mb-4">Contact</h4>
-            <p className="text-sm text-muted-foreground">
-              📍 Govandi, Mumbai 400043
-            </p>
-            <p className="text-sm mt-2">
-              📞 <a href="tel:+919999999999" className="hover:text-primary">
-                +91 99999 99999
-              </a>
-            </p>
-            <p className="text-sm mt-2 break-all">
-              ✉ <a href="mailto:hello@cakejunction.com" className="hover:text-primary">
-                hello@cakejunction.com
-              </a>
-            </p>
+            <p className="text-sm">📍 Mumbai, India</p>
+            <p className="text-sm mt-2">📞 +91 99999 99999</p>
+            <p className="text-sm mt-2">✉ hello@cakejunction.com</p>
 
-            <div className="flex gap-3 mt-4">
-              <a href="#" aria-label="Instagram"><Instagram /></a>
-              <a href="#" aria-label="Facebook"><Facebook /></a>
-              <a href="#" aria-label="YouTube"><Youtube /></a>
-              <a href="#" aria-label="Twitter"><Twitter /></a>
+            <div className="flex gap-3 mt-4 text-muted-foreground">
+              <Instagram />
+              <Facebook />
+              <Youtube />
+              <Twitter />
             </div>
           </div>
         </div>
 
-        {/* COPYRIGHT */}
         <div className="mt-10 pt-6 border-t text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Cake Junction. All Rights Reserved.
+          © {new Date().getFullYear()} Cake Junction. All rights reserved.
         </div>
 
       </div>

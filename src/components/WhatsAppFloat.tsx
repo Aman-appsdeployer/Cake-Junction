@@ -1,44 +1,46 @@
 import { motion } from "framer-motion";
-import { PhoneCall } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const WhatsAppFloat = () => {
   return (
     <motion.div
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      transition={{ delay: 1, type: "spring", stiffness: 120 }}
-      className="fixed bottom-6 right-6 z-[999] mb-10 "
+      transition={{ delay: 1, type: "spring", stiffness: 140 }}
+      className="fixed bottom-6 right-6 z-[999]"
     >
-      {/* Tooltip */}
       <div className="group relative">
+
+        {/* Tooltip */}
         <span
-          className="absolute right-16 top-1/2 -translate-y-1/2 
-                     bg-background text-foreground text-sm 
-                     px-3 py-1 rounded-lg shadow-lg 
-                     opacity-0 group-hover:opacity-100 
+          className="absolute right-16 top-1/2 -translate-y-1/2
+                     bg-background text-foreground text-sm
+                     px-3 py-1 rounded-lg shadow-md
+                     opacity-0 group-hover:opacity-100
                      transition-opacity whitespace-nowrap"
         >
-          Chat with us
+          Chat with us on WhatsApp
         </span>
 
-        {/* Button */}
+        {/* WhatsApp Button */}
         <motion.a
-          href="https://wa.me/917347713573?text=Hello%20I%20would%20like%20to%20enquire%20about%20event%20planning"
+          href="https://wa.me/917347713573?text=Hello%20Cake%20Junction!%20I%20would%20like%20to%20enquire%20about%20ordering%20a%20cake."
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
+          aria-label="Chat with Cake Junction on WhatsApp"
           whileHover={{ scale: 1.12 }}
           whileTap={{ scale: 0.95 }}
-          className="relative w-14 h-14 rounded-full 
-                     bg-[#25D366] flex items-center justify-center 
-                     shadow-2xl"
+          className="relative w-14 h-14 rounded-full
+                     bg-[#25D366] flex items-center justify-center
+                     shadow-xl"
         >
-          {/* Pulse Ring */}
-          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping" />
+          {/* Pulse Ring (behind button) */}
+          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
 
           {/* Icon */}
-          <PhoneCall className="relative w-7 h-7 text-white" />
+          <MessageCircle className="relative w-7 h-7 text-white" />
         </motion.a>
+
       </div>
     </motion.div>
   );
