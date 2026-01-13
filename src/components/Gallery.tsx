@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 
+import cake1 from "@/assets/img2.jpg";
 import cake2 from "@/assets/img3.jpg";
 import cake3 from "@/assets/img4.jpg";
-import { default as cake4, default as cake5 } from "@/assets/venue-1.jpg";
-import { default as cake1, default as cake6 } from "@/assets/venue-4.jpg";
+import cake6 from "@/assets/img6.jpg";
+import cake7 from "@/assets/img7.jpg";
+import cake8 from "@/assets/img8.jpg";
+import cake4 from "@/assets/venue-1.jpg";
+import cake5 from "@/assets/venue-4.jpg";
 
 const images = [
   { src: cake1, alt: "Chocolate Cake" },
@@ -12,6 +16,8 @@ const images = [
   { src: cake4, alt: "Cupcakes" },
   { src: cake5, alt: "Fresh Pastries" },
   { src: cake6, alt: "Custom Designed Cake" },
+  { src: cake7, alt: "Fruit Tart" },
+  { src: cake8, alt: "Layered Cake" },
 ];
 
 const Gallery = () => {
