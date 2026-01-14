@@ -81,14 +81,14 @@ const Hero = () => {
 
           {/* PHONE CTA */}
           <motion.a
-            href="tel:+919999999999"
+            href="tel:+91 7347713573"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45 }}
             className="inline-flex items-center gap-2 text-sm sm:text-base text-gray-200 hover:text-primary transition"
           >
             <PhoneCall className="w-5 h-5" />
-            Call to Order: +91 99999 99999
+            Call to Order: +91 7347713573
           </motion.a>
         </div>
       </div>

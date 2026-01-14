@@ -5,10 +5,13 @@ import { useState } from "react";
 import galleryHeroImage from "@/assets/img3.jpg";
 
 import cake1 from "@/assets/img1.jpg";
-import { default as cake2, default as cake6 } from "@/assets/img2.jpg";
+import cake2 from "@/assets/img2.jpg";
 import cake3 from "@/assets/img3.jpg";
+import cake6 from "@/assets/img4.jpg";
 import cake4 from "@/assets/img5.jpg";
 import cake5 from "@/assets/img6.jpg";
+import cake7 from "@/assets/img7.jpg";
+
 
 /* ================= FEATURED WORK ================= */
 const ourWorkImages = [
@@ -27,7 +30,9 @@ const categoryImages = [
   { id: 103, title: "Floral Theme Cake", category: "Custom Cakes", image: cake4 },
   { id: 104, title: "Office Celebration Cake", category: "Corporate Cakes", image: cake6 },
   { id: 105, title: "Mini Dessert Cups", category: "Desserts", image: cake5 },
-  { id: 106, title: "Premium Cupcakes", category: "Desserts", image: cake2 },
+  { id: 106, title: "Premium Cupcakes", category: "Desserts", image: cake6 },
+  { id: 107, title: "Kids Birthday Cake", category: "Birthday Cakes", image: cake2 },
+  { id: 108, title: "Elegant Wedding Cake", category: "Wedding Cakes", image: cake7 },
 ];
 
 const categories = [

@@ -50,14 +50,46 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-bold mb-4">Contact</h4>
             <p className="text-sm">📍 Mumbai, India</p>
-            <p className="text-sm mt-2">📞 +91 99999 99999</p>
+            <p className="text-sm mt-2">📞 +91 7347713573</p>
             <p className="text-sm mt-2">✉ hello@cakejunction.com</p>
 
-            <div className="flex gap-3 mt-4 text-muted-foreground">
-              <Instagram />
-              <Facebook />
-              <Youtube />
-              <Twitter />
+            {/* SOCIAL LINKS */}
+            <div className="flex gap-4 mt-4 text-muted-foreground">
+              <a
+                href="https://www.instagram.com/cakejunction7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
+                <Instagram />
+              </a>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
+                <Facebook />
+              </a>
+
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
+                <Youtube />
+              </a>
+
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
+                <Twitter />
+              </a>
             </div>
           </div>
         </div>
