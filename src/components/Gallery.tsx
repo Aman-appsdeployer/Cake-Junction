@@ -22,7 +22,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="py-24 bg-secondary/30">
+    <section id="gallery" className=" bg-white">
       <div className="container mx-auto px-4">
 
         {/* ================= HEADER ================= */}

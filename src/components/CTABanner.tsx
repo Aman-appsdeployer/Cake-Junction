@@ -4,7 +4,7 @@ import { ArrowRight, CakeSlice } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section className="py-28 bg-secondary/20 ">
+    <section className=" bg-white ">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 

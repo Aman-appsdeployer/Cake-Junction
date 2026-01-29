@@ -5,24 +5,33 @@ import Layout from "@/layout/Layout";
 
 // Pages
 import About from "@/pages/About";
+import Cart from "@/pages/Cart";
 import Contact from "@/pages/Contact";
 import Gallery from "@/pages/Gallery";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import Shop from "@/pages/Shop";
+import Categories from "@/pages/Categories";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
+
+          {/* MAIN PAGES */}
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/categories" element={<Categories />} />
+
+          {/* 404 PAGE */}
           <Route path="*" element={<NotFound />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
@@ -30,6 +39,8 @@ const App = () => {
 };
 
 export default App;
+
+
 
 
 
