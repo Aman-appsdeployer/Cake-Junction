@@ -1,48 +1,58 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { Instagram, PhoneCall } from "lucide-react";
 
 const WhatsAppFloat = () => {
   return (
-    <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ delay: 1, type: "spring", stiffness: 140 }}
-      className="fixed bottom-6 right-6 z-[999]"
-    >
-      <div className="group relative">
+    <div className="fixed bottom-5 right-4 sm:right-6 z-[999] flex flex-col gap-3">
+      {/* ================= INSTAGRAM ================= */}
+      <motion.a
+        href="https://www.instagram.com/cakejunction7/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.7, type: "spring", stiffness: 140 }}
+        whileHover={{ scale: 1.12 }}
+        whileTap={{ scale: 0.95 }}
+        className="
+          w-11 h-11 sm:w-12 sm:h-12
+          rounded-full
+          bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500
+          flex items-center justify-center
+          shadow-lg hover:shadow-xl
+          transition-shadow
+        "
+      >
+        <Instagram className="w-5 h-5 text-white" />
+      </motion.a>
 
-        {/* Tooltip */}
-        <span
-          className="absolute right-16 top-1/2 -translate-y-1/2
-                     bg-background text-foreground text-sm
-                     px-3 py-1 rounded-lg shadow-md
-                     opacity-0 group-hover:opacity-100
-                     transition-opacity whitespace-nowrap"
-        >
-          Chat with us on WhatsApp
-        </span>
+      {/* ================= WHATSAPP ================= */}
+      <motion.a
+        href="https://wa.me/917347713573?text=Hello%20I%20would%20like%20to%20enquire%20about%20event%20planning"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.9, type: "spring", stiffness: 140 }}
+        whileHover={{ scale: 1.12 }}
+        whileTap={{ scale: 0.95 }}
+        className="
+          relative
+          w-11 h-11 sm:w-12 sm:h-12
+          rounded-full
+          bg-[#25D366]
+          flex items-center justify-center
+          shadow-lg hover:shadow-xl
+        "
+      >
+        {/* soft pulse */}
+        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
 
-        {/* WhatsApp Button */}
-        <motion.a
-          href="https://wa.me/917347713573?text=Hello%20Cake%20Junction!%20I%20would%20like%20to%20enquire%20about%20ordering%20a%20cake."
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with Cake Junction on WhatsApp"
-          whileHover={{ scale: 1.12 }}
-          whileTap={{ scale: 0.95 }}
-          className="relative w-14 h-14 rounded-full
-                     bg-[#25D366] flex items-center justify-center
-                     shadow-xl"
-        >
-          {/* Pulse Ring (behind button) */}
-          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
-
-          {/* Icon */}
-          <MessageCircle className="relative w-7 h-7 text-white" />
-        </motion.a>
-
-      </div>
-    </motion.div>
+        <PhoneCall className="relative w-5 h-5 text-white" />
+      </motion.a>
+    </div>
   );
 };
 

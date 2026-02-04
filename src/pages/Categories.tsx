@@ -15,7 +15,7 @@ import { useCart } from "@/pages/context/CartContext";
 import heroImg from "@/assets/img3.jpg";
 import birthdayCake from "@/assets/img3.jpg";
 import weddingCake from "@/assets/venue-4.jpg";
-import corporateCake from "@/assets/img6.jpg";
+import corporateCake from "@/assets/img16.jpg";
 import customCake from "@/assets/venue-4.jpg";
 import cupcakes from "@/assets/venue-4.jpg";
 import dessertTable from "@/assets/img6.jpg";

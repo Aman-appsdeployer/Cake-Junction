@@ -5,11 +5,11 @@ import { useState } from "react";
 import galleryHeroImage from "@/assets/img3.jpg";
 
 import cake1 from "@/assets/img1.jpg";
+import cake5 from "@/assets/img16.jpg";
 import cake2 from "@/assets/img2.jpg";
 import cake3 from "@/assets/img3.jpg";
 import cake6 from "@/assets/img4.jpg";
 import cake4 from "@/assets/img5.jpg";
-import cake5 from "@/assets/img6.jpg";
 import cake7 from "@/assets/img7.jpg";
 
 

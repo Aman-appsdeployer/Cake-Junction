@@ -1,4 +1,4 @@
-import ctaCake from "@/assets/img1.jpg";
+import ctaCake from "@/assets/cake1.png";
 import { motion } from "framer-motion";
 import { ArrowRight, CakeSlice } from "lucide-react";
 
@@ -61,7 +61,7 @@ const CTABanner = () => {
               <img
                 src={ctaCake}
                 alt="Custom Cakes by Cake Junction"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[580px] object-cover"
               />
 
               {/* SOFT OVERLAY */}

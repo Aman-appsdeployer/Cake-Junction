@@ -7,7 +7,7 @@ import desserts from "@/assets/img2.jpg";
 import weddingCake from "@/assets/img3.jpg";
 import customCake from "@/assets/img4.jpg";
 import cupcakes from "@/assets/img5.jpg";
-import corporateCake from "@/assets/img6.jpg";
+import corporateCake from "@/assets/img16.jpg";
 
 const services = [
   {

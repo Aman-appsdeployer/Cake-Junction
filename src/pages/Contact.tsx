@@ -370,7 +370,7 @@ const Contact = () => {
             <div className="bg-card p-7 rounded-2xl shadow-md space-y-4">
               <p className="flex items-center gap-3 font-medium">
                 <Phone className="text-primary" />
-                +91 99999 99999
+                +91 7347713573
               </p>
               <p className="flex items-center gap-3 font-medium">
                 <Mail className="text-primary" />

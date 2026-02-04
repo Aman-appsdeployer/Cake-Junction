@@ -12,7 +12,7 @@ import about3 from "@/assets/img1.jpg";
 import about1 from "@/assets/img14.jpg";
 import heroImage from "@/assets/img3.jpg";
 import about2 from "@/assets/img8.jpg";
-import about4 from "@/assets/venue-4.jpg";
+import about4 from "@/assets/cake.png";
 
 /* ================= DATA ================= */
 const features = [
@@ -162,7 +162,7 @@ const About = () => {
               <img
                 src={about4}
                 alt="Cake Junction Story"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[580px] object-cover"
               />
             </div>
 

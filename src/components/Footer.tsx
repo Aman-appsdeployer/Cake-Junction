@@ -88,7 +88,7 @@ const Footer = () => {
 
         {/* NEWSLETTER */}
         <div className="mt-12 bg-secondary rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-medium">🎂 Subscribe for special offers & updates</p>
+          <p className="font-medium"> Subscribe for special offers & updates</p>
           <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
             <Mail className="w-4 h-4 text-muted-foreground" />
             <input

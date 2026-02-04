@@ -1,99 +1,90 @@
+/* ================= GOOGLE FONTS (MUST BE FIRST) ================= */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ================= TAILWIND ================= */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ================= GOOGLE FONTS ================= */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
-
 /* ================= BASE THEME ================= */
 @layer base {
   :root {
-    /* ===== BACKGROUND & TEXT ===== */
-    --background: 36 100% 97%;        /* Cream */
-    --foreground: 25 30% 18%;         /* Cocoa */
+    /* ===== LOGO MATCHED COLORS ===== */
+    --background: 38 100% 97%;      /* cream */
+    --foreground: 24 35% 20%;       /* chocolate */
 
     --card: 0 0% 100%;
-    --card-foreground: 25 30% 18%;
+    --card-foreground: 24 35% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 30% 18%;
+    --popover-foreground: 24 35% 20%;
 
-    /* ===== BRAND COLORS ===== */
-    --primary: 345 75% 55%;           /* Strawberry Pink */
+    /* strawberry pink */
+    --primary: 350 85% 62%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 36 60% 90%;          /* Vanilla */
-    --secondary-foreground: 25 30% 18%;
+    /* warm cream sections */
+    --secondary: 38 70% 92%;
+    --secondary-foreground: 24 35% 20%;
 
-    --accent: 28 80% 55%;             /* Caramel */
-    --accent-foreground: 0 0% 100%;
+    /* gold accent */
+    --accent: 42 95% 55%;
+    --accent-foreground: 24 35% 20%;
 
-    /* ===== MUTED ===== */
-    --muted: 36 40% 88%;
-    --muted-foreground: 25 20% 40%;
+    --muted: 38 40% 90%;
+    --muted-foreground: 24 20% 45%;
 
-    /* ===== STATUS ===== */
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* ===== BORDERS & INPUT ===== */
-    --border: 36 30% 85%;
-    --input: 36 30% 85%;
-    --ring: 345 75% 55%;
+    --border: 38 35% 85%;
+    --input: 38 35% 85%;
+    --ring: 350 85% 62%;
 
     --radius: 0.75rem;
 
-    /* ===== CUSTOM CAKE TOKENS ===== */
-    --pink: 345 75% 55%;
-    --pink-light: 345 85% 70%;
-    --caramel: 28 80% 55%;
-    --chocolate: 25 30% 18%;
-    --cream: 36 100% 97%;
+    /* brand helpers */
+    --pink: 350 85% 62%;
+    --pink-light: 350 90% 72%;
+    --gold: 42 95% 55%;
+    --gold-light: 45 100% 70%;
+    --chocolate: 24 35% 20%;
+    --cream: 38 100% 97%;
 
-    /* ===== GRADIENTS ===== */
+    /* gradients */
     --gradient-cake: linear-gradient(
       135deg,
-      hsl(345, 75%, 55%),
-      hsl(28, 80%, 55%)
+      hsl(350, 85%, 62%),
+      hsl(42, 95%, 55%)
     );
 
     --gradient-soft: linear-gradient(
       180deg,
-      hsl(36, 100%, 97%),
-      hsl(36, 80%, 94%)
+      hsl(38, 100%, 97%),
+      hsl(38, 80%, 93%)
     );
 
-    /* ===== SHADOWS ===== */
-    --shadow-soft: 0 10px 30px hsla(25, 30%, 18%, 0.08);
-    --shadow-pink: 0 8px 25px hsla(345, 75%, 55%, 0.35);
+    --shadow-soft: 0 12px 30px hsla(24, 35%, 20%, 0.10);
+    --shadow-pink: 0 10px 28px hsla(350, 85%, 62%, 0.35);
   }
 
-  /* ===== DARK MODE (CHOCOLATE 🍫) ===== */
+  /* ===== DARK MODE (optional future use) ===== */
   .dark {
-    --background: 25 30% 12%;
-    --foreground: 36 100% 96%;
+    --background: 24 30% 12%;
+    --foreground: 38 100% 96%;
 
-    --card: 25 30% 16%;
-    --card-foreground: 36 100% 96%;
+    --card: 24 30% 16%;
+    --card-foreground: 38 100% 96%;
 
-    --primary: 345 75% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 350 85% 66%;
+    --secondary: 24 25% 22%;
+    --muted: 24 25% 20%;
 
-    --secondary: 25 25% 22%;
-    --secondary-foreground: 36 100% 96%;
-
-    --muted: 25 25% 20%;
-    --muted-foreground: 36 20% 70%;
-
-    --accent: 28 80% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --border: 25 25% 22%;
-    --input: 25 25% 22%;
-    --ring: 345 75% 60%;
+    --border: 24 25% 22%;
+    --input: 24 25% 22%;
+    --ring: 350 85% 66%;
   }
 
-  /* ===== GLOBAL RESET ===== */
   * {
     @apply border-border;
   }
@@ -107,44 +98,37 @@
     font-family: "Poppins", sans-serif;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", serif;
   }
 }
 
 /* ================= COMPONENTS ================= */
 @layer components {
+
   .section-title {
     @apply text-sm uppercase tracking-widest text-primary font-medium mb-2;
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
   }
 
   .card-hover {
     @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
   }
 
-  /* ===== PRIMARY BUTTON ===== */
+  /* ===== BRAND BUTTON ===== */
   .btn-gold {
-    @apply bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full
-           transition-all duration-300
-           hover:bg-[hsl(345,85%,65%)]
-           hover:shadow-[0_8px_25px_hsla(345,75%,55%,0.35)]
-           active:scale-95;
+    @apply text-white font-semibold px-8 py-3 rounded-full
+           transition-all duration-300 active:scale-95;
+    background: var(--gradient-cake);
+    box-shadow: var(--shadow-pink);
   }
 
-  /* ===== OUTLINE BUTTON ===== */
   .btn-outline-gold {
     @apply border-2 border-primary text-primary font-semibold px-8 py-3 rounded-full
-           transition-all duration-300
-           hover:bg-primary hover:text-primary-foreground;
+           transition-all duration-300 hover:bg-primary hover:text-white;
   }
 
   .glass-card {
@@ -152,8 +136,8 @@
   }
 
   .input-elegant {
-    @apply bg-secondary border border-border rounded-lg px-4 py-3
-           text-foreground placeholder:text-muted-foreground
+    @apply bg-secondary border border-border rounded-lg px-4 py-3 text-foreground
+           placeholder:text-muted-foreground
            focus:outline-none focus:ring-2 focus:ring-primary/40
            transition-all duration-300;
   }
@@ -161,6 +145,7 @@
 
 /* ================= UTILITIES ================= */
 @layer utilities {
+
   .text-gradient-cake {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
@@ -170,12 +155,8 @@
   }
 
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-16px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
   }
 
   .animate-fade-up {
@@ -191,5 +172,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* ===== SWIPER SAFETY FIX ===== */
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    width: auto;
   }
 }
