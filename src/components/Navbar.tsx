@@ -3,7 +3,7 @@ import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import logo from "@/assets/LLL.jpg";
+import logo from "@/assets/Logo.jpg";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -24,104 +24,156 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkClass = ({ isActive }) =>
-    `relative text-sm font-medium transition
-     ${isActive ? "text-primary" : "text-foreground/80 hover:text-primary"}
-    `;
-
   return (
     <motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all
-        ${scrolled ? "bg-background shadow-md" : "bg-white/80 backdrop-blur"}
-      `}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300
+        ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b"
+            : "bg-transparent shadow-none"
+        }`}
     >
       <div className="container mx-auto px-4">
-        <div className="h-20 flex items-center justify-between">
+        <div className="h-[78px] flex items-center justify-between">
 
-          {/* LOGO */}
-          <NavLink to="/" className="flex items-center">
+          {/* ================= LOGO ================= */}
+          <NavLink to="/" className="flex items-center gap-3">
             <img
               src={logo}
-              alt="Cake Junction Logo"
-              className="h-14 object-contain"
+              alt="Brand Logo"
+              className="h-20 w-auto object-contain mix-blend-multiply"
             />
           </NavLink>
 
-          {/* SEARCH BAR (DESKTOP) */}
-          <div className="hidden lg:flex items-center bg-secondary rounded-full px-3 py-1">
-            <Search className="w-4 h-4 text-muted-foreground" />
+          {/* ================= SEARCH ================= */}
+          <div
+            className={`hidden lg:flex items-center w-[280px] rounded-full px-4 py-2 transition
+            ${
+              scrolled
+                ? "bg-secondary/70"
+                : "bg-white/15 backdrop-blur text-white placeholder-white/70"
+            }`}
+          >
+            <Search className="w-4 h-4 opacity-80" />
             <input
               type="text"
               placeholder="Search cakes..."
-              className="bg-transparent outline-none px-2 text-sm"
+              className="bg-transparent outline-none px-3 text-sm w-full placeholder:opacity-70"
             />
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* ================= DESKTOP NAV ================= */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <NavLink key={link.label} to={link.path} className={linkClass}>
+              <NavLink
+                key={link.label}
+                to={link.path}
+                className="relative group text-sm font-medium"
+              >
                 {({ isActive }) => (
                   <>
-                    {link.label}
-                    {isActive && (
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
-                    )}
+                    <span
+                      className={`transition
+                        ${
+                          isActive
+                            ? "text-primary"
+                            : scrolled
+                            ? "text-foreground/80 group-hover:text-primary"
+                            : "text-white group-hover:text-primary"
+                        }`}
+                    >
+                      {link.label}
+                    </span>
+
+                    <span
+                      className={`absolute -bottom-1 left-0 h-[2px] bg-primary rounded-full transition-all duration-300
+                      ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                    />
                   </>
                 )}
               </NavLink>
             ))}
           </div>
 
-          {/* RIGHT ICONS */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* ================= RIGHT ICONS ================= */}
+          <div className="hidden md:flex items-center gap-3">
 
             {/* USER */}
-            <NavLink to="/login" className="p-2 rounded-full hover:bg-secondary">
+            <NavLink
+              to="/login"
+              className={`p-2 rounded-full transition
+              ${scrolled ? "hover:bg-secondary" : "hover:bg-white/15 text-white"}`}
+            >
               <User className="w-5 h-5" />
             </NavLink>
 
-            {/* CART WITH BADGE */}
-            <NavLink to="/cart" className="relative p-2 rounded-full hover:bg-secondary">
+            {/* CART */}
+            <NavLink
+              to="/cart"
+              className={`relative p-2 rounded-full transition
+              ${scrolled ? "hover:bg-secondary" : "hover:bg-white/15 text-white"}`}
+            >
               <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 bg-primary text-white text-xs px-1.5 rounded-full">
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-1 -right-1 bg-primary text-white text-xs px-1.5 rounded-full"
+              >
                 2
-              </span>
+              </motion.span>
             </NavLink>
 
-            {/* CTA BUTTON */}
-            <NavLink to="/shop" className="btn-gold">
+            {/* CTA */}
+            <NavLink
+              to="/shop"
+              className="ml-2 px-5 py-2 rounded-full bg-primary text-white text-sm font-medium shadow hover:shadow-lg hover:scale-105 transition"
+            >
               Order Now
             </NavLink>
           </div>
 
-          {/* MOBILE TOGGLE */}
-          <button onClick={() => setOpen(!open)} className="lg:hidden">
+          {/* ================= MOBILE TOGGLE ================= */}
+          <button
+            onClick={() => setOpen(!open)}
+            className={`lg:hidden p-2 rounded-md transition
+            ${scrolled ? "hover:bg-secondary" : "hover:bg-white/15 text-white"}`}
+          >
             {open ? <X /> : <Menu />}
           </button>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden bg-background border-t"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-white border-t shadow-xl"
           >
-            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-5">
+
+              <div className="flex items-center bg-secondary rounded-full px-4 py-2">
+                <Search className="w-4 h-4 opacity-70" />
+                <input
+                  placeholder="Search cakes..."
+                  className="bg-transparent outline-none px-3 text-sm w-full"
+                />
+              </div>
+
               {navLinks.map((link) => (
                 <NavLink
                   key={link.label}
                   to={link.path}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `font-medium transition
-                     ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `text-base font-medium transition
+                    ${isActive ? "text-primary" : "hover:text-primary"}`
                   }
                 >
                   {link.label}
@@ -131,7 +183,7 @@ const Navbar = () => {
               <NavLink
                 to="/shop"
                 onClick={() => setOpen(false)}
-                className="btn-gold text-center mt-4"
+                className="mt-4 px-5 py-3 rounded-full bg-primary text-white text-center font-medium shadow"
               >
                 Order Your Cake
               </NavLink>
@@ -144,131 +196,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-// import { AnimatePresence, motion } from "framer-motion";
-// import { Menu, ShoppingCart, X } from "lucide-react";
-// import { useEffect, useState } from "react";
-// import { NavLink } from "react-router-dom";
-
-// import logo from "@/assets/LLL.jpg";
-
-// const navLinks = [
-//   { label: "Home", path: "/" },
-//   { label: "About", path: "/about" },
-//   { label: "Shop", path: "/shop" },
-//   { label: "Gallery", path: "/gallery" },
-//   { label: "Contact", path: "/contact" },
-// ];
-
-// const Navbar = () => {
-//   const [open, setOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const onScroll = () => setScrolled(window.scrollY > 60);
-//     window.addEventListener("scroll", onScroll);
-//     return () => window.removeEventListener("scroll", onScroll);
-//   }, []);
-
-//   const linkClass = ({ isActive }) =>
-//     `relative text-sm font-medium transition
-//      ${isActive ? "text-primary" : "text-foreground/80 hover:text-primary"}
-//     `;
-
-//   return (
-//     <motion.nav
-//       initial={{ y: -80 }}
-//       animate={{ y: 0 }}
-//       className={`fixed top-0 inset-x-0 z-50
-//         ${scrolled ? "bg-background shadow-md" : "bg-white"}
-//       `}
-//     >
-//       <div className="container mx-auto px-4">
-//         <div className="h-20 flex items-center justify-between">
-
-//           {/* LOGO IMAGE */}
-//           <NavLink to="/" className="flex items-center">
-//             <img
-//               src={logo}
-//               alt="Cake Junction Logo"
-//               className="h-14 sm:h-16 md:h-20 lg:h-22 object-contain bg-transparent mix-blend-multiply"
-//             />
-//           </NavLink>
-
-//           {/* DESKTOP NAV */}
-//           <div className="hidden lg:flex items-center gap-8">
-//             {navLinks.map((link) => (
-//               <NavLink key={link.label} to={link.path} className={linkClass}>
-//                 {({ isActive }) => (
-//                   <>
-//                     {link.label}
-//                     {isActive && (
-//                       <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
-//                     )}
-//                   </>
-//                 )}
-//               </NavLink>
-//             ))}
-//           </div>
-
-//           {/* DESKTOP CTA */}
-//           <div className="hidden md:flex items-center gap-4">
-//             <NavLink to="/shop" className="p-2 rounded-full hover:bg-secondary">
-//               <ShoppingCart className="w-5 h-5" />
-//             </NavLink>
-
-//             <NavLink to="/contact" className="btn-gold">
-//               Order Now
-//             </NavLink>
-//           </div>
-
-//           {/* MOBILE TOGGLE */}
-//           <button onClick={() => setOpen(!open)} className="lg:hidden">
-//             {open ? <X /> : <Menu />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* MOBILE MENU */}
-//       <AnimatePresence>
-//         {open && (
-//           <motion.div
-//             initial={{ height: 0, opacity: 0 }}
-//             animate={{ height: "auto", opacity: 1 }}
-//             exit={{ height: 0, opacity: 0 }}
-//             className="lg:hidden bg-background border-t"
-//           >
-//             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-//               {navLinks.map((link) => (
-//                 <NavLink
-//                   key={link.label}
-//                   to={link.path}
-//                   onClick={() => setOpen(false)}
-//                   className={({ isActive }) =>
-//                     `font-medium transition
-//                      ${isActive ? "text-primary" : "hover:text-primary"}`
-//                   }
-//                 >
-//                   {link.label}
-//                 </NavLink>
-//               ))}
-
-//               <NavLink
-//                 to="/contact"
-//                 onClick={() => setOpen(false)}
-//                 className="btn-gold text-center mt-4"
-//               >
-//                 Order Your Cake
-//               </NavLink>
-//             </div>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </motion.nav>
-//   );
-// };
-
-// export default Navbar;

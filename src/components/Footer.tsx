@@ -1,7 +1,7 @@
-import { Facebook, Instagram, Mail, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, Youtube } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-import logo from "@/assets/LLL.jpg";
+import logo from "@/assets/Logo.jpg";
 
 const Footer = () => {
   const linkClass = ({ isActive }) =>
@@ -22,7 +22,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Cake Junction Logo"
-                className="h-16 object-contain bg-transparent mix-blend-multiply"
+                className=" h-28 object-contain bg-transparent mix-blend-multiply"
               />
             </NavLink>
 
@@ -37,7 +37,7 @@ const Footer = () => {
                 className="hover:text-primary transition hover:scale-110">
                 <Instagram />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/share/1BwThQmjmD/" target="_blank" rel="noopener noreferrer"
                 className="hover:text-primary transition hover:scale-110">
                 <Facebook />
               </a>
@@ -45,10 +45,7 @@ const Footer = () => {
                 className="hover:text-primary transition hover:scale-110">
                 <Youtube />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                className="hover:text-primary transition hover:scale-110">
-                <Twitter />
-              </a>
+              
             </div>
           </div>
 

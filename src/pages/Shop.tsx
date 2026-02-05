@@ -12,9 +12,12 @@ import {
 import { useNavigate } from "react-router-dom";
 
 /* ================= IMAGES ================= */
-import { default as birthdayCake, default as corporateCake } from "@/assets/img3.jpg";
+import birthdayCake from "@/assets/img13.jpeg";
+import weddingCake from "@/assets/venue-4.jpg";
+import corporateCake from "@/assets/img4.jpg";
+import customCake from "@/assets/img5.jpg";
 import dessertTable from "@/assets/img6.jpg";
-import { default as cupcakes, default as customCake, default as weddingCake } from "@/assets/venue-4.jpg";
+import cupcakes from "@/assets/img12.jpg";
 
 /* ================= DATA ================= */
 const shopItems = [
