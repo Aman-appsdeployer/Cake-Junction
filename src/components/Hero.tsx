@@ -97,8 +97,8 @@ const Hero = () => {
           />
         </AnimatePresence>
 
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 " />
       </div>
 
       {/* ================= CONTENT ================= */}
@@ -113,53 +113,7 @@ const Hero = () => {
           }}
           className="max-w-3xl"
         >
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              show: { opacity: 1, y: 0 },
-            }}
-            className="uppercase tracking-widest text-primary font-semibold mb-3 sm:mb-4 text-xs sm:text-sm"
-          >
-            Freshly Baked Happiness
-          </motion.p>
-
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: 32 },
-              show: { opacity: 1, y: 0 },
-            }}
-            className="font-serif font-bold text-white leading-tight mb-5 sm:mb-6 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Delicious Cakes for <br className="hidden xs:block" />
-            Every Celebration <BrandTypewriter />
-          </motion.h1>
-
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 24 },
-              show: { opacity: 1, y: 0 },
-            }}
-            className="text-white/85 max-w-xl mb-8 sm:mb-10 leading-relaxed text-sm sm:text-base md:text-lg"
-          >
-            Handcrafted cakes made with premium ingredients for birthdays,
-            weddings, corporate events, and custom celebrations.
-          </motion.p>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 24 },
-              show: { opacity: 1, y: 0 },
-            }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <a href="/contact" className="btn-gold text-center w-full sm:w-auto">
-              Order Your Cake
-            </a>
-
-            <a href="#menu" className="btn-outline-gold text-center w-full sm:w-auto">
-              View Menu
-            </a>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

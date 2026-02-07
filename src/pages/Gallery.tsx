@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 /* ================= IMAGES ================= */
-import galleryHeroImage from "@/assets/img3.jpg";
+import galleryHeroImage from "@/assets/hero3.png";
 
 import cake1 from "@/assets/img1.jpg";
 import cake5 from "@/assets/img16.jpg";

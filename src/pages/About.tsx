@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 /* ================= IMAGES ================= */
 import about3 from "@/assets/img1.jpg";
 import about1 from "@/assets/img14.jpg";
-import heroImage from "@/assets/img3.jpg";
+import heroImage from "@/assets/hero3.png";
 import about2 from "@/assets/img8.jpg";
 import about4 from "@/assets/cake.png";
 

@@ -1,4 +1,4 @@
-import galleryHeroImage from "@/assets/img3.jpg";
+import galleryHeroImage from "@/assets/hero3.png";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import {

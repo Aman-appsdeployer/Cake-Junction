@@ -11,8 +11,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/pages/context/CartContext";
 
+/* =================  Hero Section IMAGES ================= */
+import heroImg from "@/assets/hero3.png";
+
+
 /* ================= IMAGES ================= */
-import heroImg from "@/assets/img3.jpg";
 import birthdayCake from "@/assets/img3.jpg";
 import weddingCake from "@/assets/venue-4.jpg";
 import corporateCake from "@/assets/img16.jpg";
