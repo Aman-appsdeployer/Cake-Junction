@@ -11,6 +11,9 @@ import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import Shop from "@/pages/Shop";
 import Categories from "@/pages/Categories";
+import Checkout from "@/pages/Checkout";
+import OrderSuccess from "@/pages/OrderSuccess";
+import Payment from "@/pages/Payment";
 
 const App: React.FC = () => {
   return (
@@ -26,7 +29,9 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/categories" element={<Categories />} />
-
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/payment" element={<Payment />} />
           {/* 404 PAGE */}
           <Route path="*" element={<NotFound />} />
 

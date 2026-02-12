@@ -1,11 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from "@/assets/Logo-1.png";
-
-/*  optional — replace with your real cart hook */
 import { useCart } from "@/pages/context/CartContext";
 
 const navLinks = [
@@ -18,28 +16,16 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  /*  dynamic cart count */
-  const { cartCount } = useCart(); // ← dynamic value
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const { cartCount } = useCart();
 
   return (
     <motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300
-      ${
-        scrolled
-          ? "bg-white backdrop-blur-md  border-b border-rose-100"
-          : "bg-white backdrop-blur-md"
-      }`}
+      className="fixed top-0 inset-x-0 z-50
+                 bg-white border-b border-rose-100
+                 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="h-[72px] flex items-center justify-between">
@@ -54,26 +40,26 @@ const Navbar = () => {
           </NavLink>
 
           {/* ================= SEARCH (DESKTOP) ================= */}
-          <div
-            className={`hidden lg:flex items-center w-[260px] rounded-full px-4 py-2 border transition
-            ${
-              scrolled
-                ? "bg-rose-50 border-rose-200"
-                : "bg-white/20 border-white/30 text-white"
-            }`}
-          >
-            <Search className="w-4 h-4 opacity-70" />
+          <div className="hidden lg:flex items-center w-[260px]
+                          rounded-full px-4 py-2 border
+                          bg-rose-50 border-rose-200">
+            <Search className="w-4 h-4 opacity-70 text-gray-600" />
             <input
               type="text"
               placeholder="Search cakes..."
-              className="bg-transparent outline-none px-3 text-sm w-full placeholder:opacity-70"
+              className="bg-transparent outline-none px-3 text-sm w-full
+                         text-gray-700 placeholder:text-gray-400"
             />
           </div>
 
           {/* ================= DESKTOP NAV ================= */}
           <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
-              <NavLink key={link.label} to={link.path} className="group relative text-sm font-medium">
+              <NavLink
+                key={link.label}
+                to={link.path}
+                className="group relative text-sm font-medium"
+              >
                 {({ isActive }) => (
                   <>
                     <span
@@ -81,16 +67,16 @@ const Navbar = () => {
                         ${
                           isActive
                             ? "text-rose-600"
-                            : scrolled
-                              ? "text-gray-700 group-hover:text-rose-600"
-                              : "text-white group-hover:text-rose-300"
+                            : "text-gray-700 group-hover:text-rose-600"
                         }`}
                     >
                       {link.label}
                     </span>
 
                     <span
-                      className={`absolute -bottom-1 left-0 h-[2px] bg-rose-500 rounded-full transition-all duration-300
+                      className={`absolute -bottom-1 left-0 h-[2px]
+                      bg-rose-500 rounded-full
+                      transition-all duration-300
                       ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
                     />
                   </>
@@ -104,12 +90,8 @@ const Navbar = () => {
 
             <NavLink
               to="/login"
-              className={`p-2 rounded-full transition
-              ${
-                scrolled
-                  ? "hover:bg-rose-100 text-gray-700"
-                  : "hover:bg-white/20 text-white"
-              }`}
+              className="p-2 rounded-full hover:bg-rose-100
+                         text-gray-700 transition"
             >
               <User className="w-5 h-5" />
             </NavLink>
@@ -117,12 +99,9 @@ const Navbar = () => {
             {/* CART */}
             <NavLink
               to="/cart"
-              className={`relative p-2 rounded-full transition
-              ${
-                scrolled
-                  ? "hover:bg-rose-100 text-gray-700"
-                  : "hover:bg-white/20 text-white"
-              }`}
+              className="relative p-2 rounded-full
+                         hover:bg-rose-100
+                         text-gray-700 transition"
             >
               <ShoppingCart className="w-5 h-5" />
 
@@ -130,7 +109,10 @@ const Navbar = () => {
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 bg-rose-500 text-white text-xs px-1.5 py-0.5 rounded-full"
+                  className="absolute -top-1 -right-1
+                             bg-rose-500 text-white
+                             text-xs px-1.5 py-0.5
+                             rounded-full"
                 >
                   {cartCount}
                 </motion.span>
@@ -140,7 +122,10 @@ const Navbar = () => {
             {/* CTA */}
             <NavLink
               to="/shop"
-              className="ml-2 px-5 py-2 rounded-full bg-rose-500 text-white text-sm font-medium shadow hover:bg-rose-600 hover:shadow-lg transition"
+              className="ml-2 px-5 py-2 rounded-full
+                         bg-rose-500 text-white text-sm font-medium
+                         shadow hover:bg-rose-600
+                         hover:shadow-lg transition"
             >
               Order Now
             </NavLink>
@@ -149,12 +134,9 @@ const Navbar = () => {
           {/* ================= MOBILE TOGGLE ================= */}
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden p-2 rounded-md transition
-            ${
-              scrolled
-                ? "hover:bg-rose-100 text-gray-700"
-                : "hover:bg-white/20 text-white"
-            }`}
+            className="lg:hidden p-2 rounded-md
+                       hover:bg-rose-100
+                       text-gray-700 transition"
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -173,8 +155,9 @@ const Navbar = () => {
           >
             <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-5">
 
+              {/* mobile search */}
               <div className="flex items-center bg-rose-50 rounded-full px-4 py-2">
-                <Search className="w-4 h-4 opacity-70" />
+                <Search className="w-4 h-4 opacity-70 text-gray-600" />
                 <input
                   placeholder="Search cakes..."
                   className="bg-transparent outline-none px-3 text-sm w-full"
@@ -188,7 +171,11 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     `text-base font-medium transition
-                    ${isActive ? "text-rose-600" : "text-gray-700 hover:text-rose-600"}`
+                     ${
+                       isActive
+                         ? "text-rose-600"
+                         : "text-gray-700 hover:text-rose-600"
+                     }`
                   }
                 >
                   {link.label}
@@ -198,10 +185,14 @@ const Navbar = () => {
               <NavLink
                 to="/shop"
                 onClick={() => setOpen(false)}
-                className="mt-4 px-5 py-3 rounded-full bg-rose-500 text-white text-center font-medium shadow hover:bg-rose-600 transition"
+                className="mt-4 px-5 py-3 rounded-full
+                           bg-rose-500 text-white text-center
+                           font-medium shadow
+                           hover:bg-rose-600 transition"
               >
                 Order Your Cake
               </NavLink>
+
             </div>
           </motion.div>
         )}
@@ -211,6 +202,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 
 

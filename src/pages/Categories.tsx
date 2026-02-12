@@ -94,7 +94,7 @@ const Categories: React.FC = () => {
             alt="Cake Categories"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 " />
         </div>
 
         

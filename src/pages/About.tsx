@@ -96,13 +96,13 @@ const About: React.FC = () => {
   return (
     <main className="overflow-hidden bg-white">
       {/* ================= HERO — IMAGE ONLY ================= */}
-      <section className="relative h-[110vh] w-full">
+      <section className="relative h-[100vh] w-full">
         <img
           src={heroImage}
           alt="Cake Junction Bakery"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20" />
+        <div className="absolute inset-0 " />
       </section>
 
       {/* ================= STORY ================= */}

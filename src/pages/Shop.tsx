@@ -229,7 +229,7 @@ const Shop: React.FC = () => {
             alt="Shop Cakes"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 " />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pt-28 text-white">
