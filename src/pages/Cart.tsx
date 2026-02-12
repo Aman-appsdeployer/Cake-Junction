@@ -18,7 +18,7 @@ const Cart: React.FC = () => {
   }
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background bg-white">
       <div className="container mx-auto px-4">
 
         <h2 className="text-4xl font-serif font-bold mb-10">

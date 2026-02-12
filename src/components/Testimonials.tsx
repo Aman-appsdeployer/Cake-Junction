@@ -27,7 +27,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-14 sm:py-16 md:py-20 bg-rose-50">
+    <section className=" sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ================= HEADER ================= */}
@@ -89,14 +89,14 @@ const Testimonials = () => {
 
               {/* author */}
               <div className="flex items-center gap-3">
-                <div
+                {/* <div
                   className="w-11 h-11 rounded-full
                              bg-gradient-to-br from-rose-500 to-pink-500
                              flex items-center justify-center
                              text-white font-bold text-sm"
                 >
                   {testimonial.name.charAt(0)}
-                </div>
+                </div> */}
 
                 <div>
                   <p className="font-semibold text-gray-900 text-sm sm:text-base">

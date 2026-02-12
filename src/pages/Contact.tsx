@@ -73,7 +73,7 @@ const Contact = () => {
     e.preventDefault();
 
     toast({
-      title: "Order Submitted 🎉",
+      title: "Order Submitted ",
       description: "Our team will contact you shortly to confirm your cake.",
     });
 
@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <main>
+    <main className="overflow-x-hidden bg-white">
 
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center">
@@ -100,29 +100,29 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             className="max-w-3xl text-white"
           >
-            <p className="uppercase tracking-widest text-primary font-semibold mb-3">
+            {/* <p className="uppercase tracking-widest text-primary font-semibold mb-3">
               Contact Cake Junction
-            </p>
+            </p> */}
 
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+            {/* <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
               Let’s Bake Your <br />
               <span className="text-primary">Perfect Cake</span>
-            </h1>
+            </h1> */}
 
-            <p className="text-white/80 mb-10 text-lg">
+            {/* <p className="text-white/80 mb-10 text-lg">
               Birthdays, weddings, anniversaries, or custom cakes —
               we’re ready to make it special.
-            </p>
+            </p> */}
 
-            <a href="#contact-form" className="btn-gold">
+            {/* <a href="#contact-form" className="btn-gold mt-72">
               Place an Order
-            </a>
+            </a> */}
           </motion.div>
         </div>
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="py-28 bg-background">
+      <section className="py-28 bg-white">
   <div className="container mx-auto px-4">
 
     {/* HEADER */}
@@ -203,7 +203,7 @@ const Contact = () => {
 
 
       {/* ================= HOW IT WORKS ================= */}
-     <section className="py-28 bg-secondary/20">
+     <section className=" bg-white">
   <div className="container mx-auto px-4">
 
     {/* HEADER */}

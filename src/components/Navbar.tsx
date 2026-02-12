@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import logo from "@/assets/Logo-1.png";
 
-/* 👉 optional — replace with your real cart hook */
+/*  optional — replace with your real cart hook */
 import { useCart } from "@/pages/context/CartContext";
 
 const navLinks = [
@@ -13,7 +13,6 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Shop", path: "/shop" },
   { label: "Categories", path: "/categories" },
-  { label: "Gallery", path: "/gallery" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -21,7 +20,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  /* ✅ dynamic cart count */
+  /*  dynamic cart count */
   const { cartCount } = useCart(); // ← dynamic value
 
   useEffect(() => {
@@ -38,8 +37,8 @@ const Navbar = () => {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300
       ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-rose-100"
-          : "bg-white/10 backdrop-blur-md"
+          ? "bg-white backdrop-blur-md  border-b border-rose-100"
+          : "bg-white backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">

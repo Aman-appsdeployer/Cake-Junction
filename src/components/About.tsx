@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { ArrowRight, CakeSlice } from "lucide-react";
+
 
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -82,7 +84,7 @@ const features = [
 
 const About = () => {
   return (
-    <section className="py-14 sm:py-16 md:py-20 bg-rose-50 overflow-hidden">
+    <section className=" sm:py-16 md:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-center">
           {/* ================= SLIDER ================= */}
@@ -198,44 +200,30 @@ const About = () => {
             </div>
 
             {/* ================= CTA ================= */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-              {/* Explore Cakes */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
-                href="#menu"
-                className="
-      w-full sm:w-auto
-      flex items-center justify-center
-      h-12 sm:h-[50px]
-      px-6 sm:px-7
-      rounded-full
-      bg-rose-500 text-white
-      font-medium text-sm sm:text-base
-      shadow
-      hover:bg-rose-600
-      transition
-    "
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2
+                           bg-rose-500 hover:bg-rose-600
+                           text-white font-medium
+                           px-6 py-3 rounded-full
+                           transition shadow"
               >
-                Explore Cakes
+                <CakeSlice className="w-5 h-5" />
+                Order Now
+                <ArrowRight className="w-4 h-4" />
               </a>
 
-              {/* WhatsApp Order */}
               <a
                 href="https://wa.me/917347713573"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-      w-full sm:w-auto
-      flex items-center justify-center
-      h-12 sm:h-[50px]
-      px-6 sm:px-7
-      rounded-full
-      border-2 border-rose-400
-      bg-white
-      text-rose-600
-      font-medium text-sm sm:text-base
-      hover:bg-rose-50
-      transition
-    "
+                className="inline-flex items-center justify-center gap-2
+                           border border-rose-400 text-rose-600
+                           hover:bg-rose-50
+                           font-medium
+                           px-6 py-3 rounded-full
+                           transition"
               >
                 WhatsApp Order
               </a>

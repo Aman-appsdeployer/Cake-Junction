@@ -9,13 +9,13 @@ import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <main className="min-h-screen bg-white overflow-x-hidden">
 
       {/* HERO */}
       <Hero />
 
       {/* CONTENT SECTIONS */}
-      <section className="space-y-24 md:space-y-28">
+      <section className="bg-white">
 
         <About />
         <CTABanner />

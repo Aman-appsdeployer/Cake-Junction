@@ -7,7 +7,6 @@ import Layout from "@/layout/Layout";
 import About from "@/pages/About";
 import Cart from "@/pages/Cart";
 import Contact from "@/pages/Contact";
-import Gallery from "@/pages/Gallery";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import Shop from "@/pages/Shop";
@@ -25,7 +24,6 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/categories" element={<Categories />} />
 

@@ -8,6 +8,10 @@ import cake7 from "@/assets/img7.jpg";
 import cake8 from "@/assets/img8.jpg";
 import cake4 from "@/assets/venue-1.jpg";
 import cake5 from "@/assets/venue-4.jpg";
+import cake9 from "@/assets/img16.jpg";
+import cake10 from "@/assets/img17.jpg";
+import cake11 from "@/assets/img8.jpg";  
+
 
 const images = [
   { src: cake1, alt: "Chocolate Cake" },
@@ -18,11 +22,14 @@ const images = [
   { src: cake6, alt: "Custom Designed Cake" },
   { src: cake7, alt: "Fruit Tart" },
   { src: cake8, alt: "Layered Cake" },
+  { src: cake9, alt: "Red Velvet Cake" },
+  { src: cake10, alt: "Lemon Drizzle Cake" },
+  { src: cake11, alt: "Vanilla Bean Cake" },
 ];
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="py-14 sm:py-16 md:py-20 bg-white">
+    <section id="gallery" className="sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ================= HEADER ================= */}
