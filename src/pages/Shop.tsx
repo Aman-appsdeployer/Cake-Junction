@@ -11,7 +11,7 @@ import gulabJamun from "@/assets/Gulab-Jamun-Cake.jpg";
 import pineapple from "@/assets/PineappleCake.jpg";
 import butterscotch from "@/assets/butterscotch.jpg";
 import chocolateTruffle from "@/assets/chocolate-truffle-birthday-cake.jpg";
-import freshCream from "@/assets/freshCream.jpg";
+import freshCream from "@/assets/freshcream.jpg";
 import mango from "@/assets/mango.jfif";
 import rasmalai from "@/assets/rasmalai.jfif";
 import redVelvet from "@/assets/red-velvet-cake.jpg";
