@@ -1,8 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight, CakeSlice, CheckCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CakeSlice } from "lucide-react";
-
 
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,7 +45,7 @@ const Typewriter = ({ text }: { text: string }) => {
           }
         });
       },
-      isDeleting ? 70 : 160,
+      isDeleting ? 70 : 160
     );
 
     return () => clearTimeout(timeout);
@@ -72,11 +70,11 @@ const Typewriter = ({ text }: { text: string }) => {
 /* ================= DATA ================= */
 
 const features = [
-  "Freshly baked every day",
-  "Premium ingredients only",
-  "Custom cakes for all occasions",
-  "Same-day delivery available",
-  "Secure WhatsApp ordering",
+  "Freshly baked cakes every day",
+  "Premium quality ingredients only",
+  "Custom birthday and wedding cakes",
+  "Same-day cake delivery available",
+  "Secure WhatsApp cake ordering",
   "10,000+ happy customers served",
 ];
 
@@ -84,10 +82,14 @@ const features = [
 
 const About = () => {
   return (
-    <section className=" sm:py-16 md:py-20 bg-white overflow-hidden">
+    <section
+      aria-label="About Cake Junction Online Bakery"
+      className="sm:py-16 md:py-20 bg-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-center">
-          {/* ================= SLIDER ================= */}
+
+          {/* ================= IMAGE SLIDER ================= */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,15 +97,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="relative w-full"
           >
-            {/* glow */}
-            <div
-              className="absolute -inset-6 sm:-inset-8 
-                            bg-gradient-to-tr 
-                            from-rose-300/20 
-                            via-pink-200/10 
-                            to-rose-500/20 
-                            blur-3xl rounded-full"
-            />
+            <div className="absolute -inset-6 sm:-inset-8 bg-gradient-to-tr from-rose-300/20 via-pink-200/10 to-rose-500/20 blur-3xl rounded-full" />
 
             <Swiper
               modules={[Autoplay, EffectCoverflow]}
@@ -131,13 +125,12 @@ const About = () => {
                 <SwiperSlide key={i}>
                   <motion.div
                     whileHover={{ scale: 1.04 }}
-                    className="rounded-2xl shadow-xl overflow-hidden
-                               h-56 sm:h-64 md:h-72 lg:h-96 w-full"
+                    className="rounded-2xl shadow-xl overflow-hidden h-56 sm:h-64 md:h-72 lg:h-96 w-full"
                   >
                     <img
                       src={img}
-                      alt="Cake product"
                       loading="lazy"
+                      alt={`Handcrafted custom cake design ${i + 1} by Cake Junction bakery`}
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
@@ -153,38 +146,41 @@ const About = () => {
             viewport={{ amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            {/* label */}
-            <p className="text-rose-600 font-semibold text-sm sm:text-base mb-2">
+            {/* small label */}
+            <p className="text-rose-600 font-semibold text-xl sm:text-2xl mb-2">
               About Cake Junction
             </p>
 
-            {/* heading */}
-            <h2
-              className="mb-5 leading-tight font-bold
-                           text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900"
-            >
-              Baking Sweet <br />
+            {/* ✅ MAIN SEO HEADING */}
+            <h1 className="mb-5 leading-tight font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900">
+              Online Cake Delivery & Custom Bakery
+              <br />
               <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
-                <Typewriter text="Moments & Memories" />
+                <Typewriter text="For Sweet Moments & Memories" />
               </span>
-            </h2>
+            </h1>
 
-            {/* text */}
+            {/* ✅ SEO RICH CONTENT */}
             <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed">
-              Cake Junction is a premium online bakery delivering handcrafted
-              cakes and desserts for birthdays, weddings, anniversaries, and
-              special celebrations.
+              Cake Junction is a premium online bakery offering birthday cakes,
+              wedding cakes, anniversary cakes, and custom designer cakes with
+              fast same-day cake delivery service. We specialize in fresh,
+              handcrafted cakes made with top-quality ingredients.
             </p>
 
             <p className="text-gray-600 mb-7 text-sm sm:text-base leading-relaxed">
-              We combine artisan baking, custom design, and fast delivery to
-              make every celebration unforgettable.
+              From celebration cakes to personalized theme cakes, our expert
+              bakers ensure every order is beautiful and delicious. You can{" "}
+              <a href="/shop" className="text-rose-600 underline">
+                explore our cake collection
+              </a>{" "}
+              and order easily online or via WhatsApp.
             </p>
 
-            {/* FEATURES */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+            {/* ✅ SEMANTIC LIST */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
               {features.map((feature, index) => (
-                <motion.div
+                <motion.li
                   key={feature}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -195,22 +191,19 @@ const About = () => {
                   <span className="font-medium text-sm sm:text-base text-gray-800">
                     {feature}
                   </span>
-                </motion.div>
+                </motion.li>
               ))}
-            </div>
+            </ul>
 
             {/* ================= CTA ================= */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2
-                           bg-rose-500 hover:bg-rose-600
-                           text-white font-medium
-                           px-6 py-3 rounded-full
-                           transition shadow"
+                aria-label="Order cake now from Cake Junction bakery"
+                className="inline-flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-medium px-6 py-3 rounded-full transition shadow"
               >
                 <CakeSlice className="w-5 h-5" />
-                Order Now
+                Order Cake Now
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -218,17 +211,14 @@ const About = () => {
                 href="https://wa.me/917347713573"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2
-                           border border-rose-400 text-rose-600
-                           hover:bg-rose-50
-                           font-medium
-                           px-6 py-3 rounded-full
-                           transition"
+                aria-label="Order cake via WhatsApp from Cake Junction"
+                className="inline-flex items-center justify-center gap-2 border border-rose-400 text-rose-600 hover:bg-rose-50 font-medium px-6 py-3 rounded-full transition"
               >
                 WhatsApp Order
               </a>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
@@ -237,9 +227,18 @@ const About = () => {
 
 export default About;
 
+
+
+
+
+
+
+
+
 // import { motion, useInView } from "framer-motion";
-// import { CheckCircle } from "lucide-react";
+// import { ArrowRight, CakeSlice, CheckCircle } from "lucide-react";
 // import { useEffect, useRef, useState } from "react";
+
 
 // import { Autoplay, EffectCoverflow } from "swiper/modules";
 // import { Swiper, SwiperSlide } from "swiper/react";
@@ -248,7 +247,6 @@ export default About;
 // import "swiper/css/effect-coverflow";
 
 // /* ================= IMAGES ================= */
-// /* use relative paths to avoid vite alias errors */
 // import cake2 from "../assets/img11.jpg";
 // import cake3 from "../assets/img12.jpg";
 // import cake5 from "../assets/img14.jpg";
@@ -285,7 +283,7 @@ export default About;
 //           }
 //         });
 //       },
-//       isDeleting ? 70 : 180
+//       isDeleting ? 70 : 160,
 //     );
 
 //     return () => clearTimeout(timeout);
@@ -296,7 +294,7 @@ export default About;
 //       {text.slice(0, count)}
 //       {isInView && (
 //         <motion.span
-//           className="ml-1 text-primary"
+//           className="ml-1 text-rose-500"
 //           animate={{ opacity: [0, 1, 0] }}
 //           transition={{ repeat: Infinity, duration: 1 }}
 //         >
@@ -322,25 +320,26 @@ export default About;
 
 // const About = () => {
 //   return (
-//     <section className="py-14 sm:py-18 md:py-20  bg-secondary/30 overflow-hidden">
-//       <div className="container mx-auto px-4 sm:px-6">
+//     <section className=" sm:py-16 md:py-20 bg-white overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 //         <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-center">
-
 //           {/* ================= SLIDER ================= */}
 //           <motion.div
-//             initial={{ opacity: 0, x: -50 }}
+//             initial={{ opacity: 0, x: -40 }}
 //             whileInView={{ opacity: 1, x: 0 }}
 //             viewport={{ amount: 0.3 }}
 //             transition={{ duration: 0.8 }}
-//             className="relative w-full overflow-hidden"
+//             className="relative w-full"
 //           >
-//             {/* glow background */}
-//             <div className="absolute -inset-6 sm:-inset-8
-//                             bg-gradient-to-tr
-//                             from-yellow-400/20
-//                             via-pink-400/10
-//                             to-purple-500/20
-//                             blur-3xl rounded-full" />
+//             {/* glow */}
+//             <div
+//               className="absolute -inset-6 sm:-inset-8 
+//                             bg-gradient-to-tr 
+//                             from-rose-300/20 
+//                             via-pink-200/10 
+//                             to-rose-500/20 
+//                             blur-3xl rounded-full"
+//             />
 
 //             <Swiper
 //               modules={[Autoplay, EffectCoverflow]}
@@ -349,32 +348,27 @@ export default About;
 //               grabCursor
 //               loop
 //               autoplay={{ delay: 2400, disableOnInteraction: false }}
-
 //               slidesPerView={1}
 //               spaceBetween={16}
-
 //               breakpoints={{
-//                 560: { slidesPerView: 1 },
-//                 640: { slidesPerView: 1.2 },
-//                 768: { slidesPerView: 1.4 },
-//                 1024: { slidesPerView: 1.6 },
+//                 640: { slidesPerView: 1.1 },
+//                 768: { slidesPerView: 1.3 },
+//                 1024: { slidesPerView: 1.5 },
 //               }}
-
 //               coverflowEffect={{
 //                 rotate: 12,
 //                 depth: 120,
 //                 modifier: 1,
 //                 slideShadows: false,
 //               }}
-
-//               className="w-full max-w-[520px] mx-auto relative z-10"
+//               className="w-full max-w-[560px] mx-auto relative z-10"
 //             >
 //               {[cake1, cake2, cake3, cake4, cake5].map((img, i) => (
 //                 <SwiperSlide key={i}>
 //                   <motion.div
-//                     whileHover={{ scale: 1.05 }}
-//                     className="rounded-2xl shadow-2xl overflow-hidden
-//                                h-52 sm:h-60 md:h-72 lg:h-96 w-full"
+//                     whileHover={{ scale: 1.04 }}
+//                     className="rounded-2xl shadow-xl overflow-hidden
+//                                h-56 sm:h-64 md:h-72 lg:h-96 w-full"
 //                   >
 //                     <img
 //                       src={img}
@@ -390,32 +384,37 @@ export default About;
 
 //           {/* ================= CONTENT ================= */}
 //           <motion.div
-//             initial={{ opacity: 0, x: 50 }}
+//             initial={{ opacity: 0, x: 40 }}
 //             whileInView={{ opacity: 1, x: 0 }}
 //             viewport={{ amount: 0.3 }}
 //             transition={{ duration: 0.8 }}
 //           >
-//             <p className="section-title text-sm sm:text-base">
+//             {/* label */}
+//             <p className="text-rose-600 font-semibold text-xl sm:text-2xl mb-2">
 //               About Cake Junction
 //             </p>
 
-//             <h2 className="section-heading mb-5 leading-tight
-//                            text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+//             {/* heading */}
+//             <h2
+//               className="mb-5 leading-tight font-bold
+//                            text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900"
+//             >
 //               Baking Sweet <br />
-//               <span className="text-gradient-gold">
+//               <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
 //                 <Typewriter text="Moments & Memories" />
 //               </span>
 //             </h2>
 
-//             <p className="text-muted-foreground mb-4 text-sm sm:text-base">
+//             {/* text */}
+//             <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed">
 //               Cake Junction is a premium online bakery delivering handcrafted
-//               cakes and desserts for birthdays, weddings, anniversaries,
-//               and special celebrations.
+//               cakes and desserts for birthdays, weddings, anniversaries, and
+//               special celebrations.
 //             </p>
 
-//             <p className="text-muted-foreground mb-7 text-sm sm:text-base">
-//               We combine artisan baking, custom design, and fast delivery
-//               to make every celebration unforgettable.
+//             <p className="text-gray-600 mb-7 text-sm sm:text-base leading-relaxed">
+//               We combine artisan baking, custom design, and fast delivery to
+//               make every celebration unforgettable.
 //             </p>
 
 //             {/* FEATURES */}
@@ -425,32 +424,47 @@ export default About;
 //                   key={feature}
 //                   initial={{ opacity: 0, y: 12 }}
 //                   whileInView={{ opacity: 1, y: 0 }}
-//                   transition={{ delay: index * 0.1 }}
+//                   transition={{ delay: index * 0.08 }}
 //                   className="flex items-start gap-3"
 //                 >
-//                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-//                   <span className="font-medium text-sm sm:text-base">
+//                   <CheckCircle className="w-5 h-5 text-rose-500 mt-0.5 shrink-0" />
+//                   <span className="font-medium text-sm sm:text-base text-gray-800">
 //                     {feature}
 //                   </span>
 //                 </motion.div>
 //               ))}
 //             </div>
 
-//             {/* CTA */}
+//             {/* ================= CTA ================= */}
 //             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-//               <a href="#menu" className="btn-gold text-center w-full sm:w-auto">
-//                 Explore Cakes
+//               <a
+//                 href="/contact"
+//                 className="inline-flex items-center justify-center gap-2
+//                            bg-rose-500 hover:bg-rose-600
+//                            text-white font-medium
+//                            px-6 py-3 rounded-full
+//                            transition shadow"
+//               >
+//                 <CakeSlice className="w-5 h-5" />
+//                 Order Now
+//                 <ArrowRight className="w-4 h-4" />
 //               </a>
 
 //               <a
 //                 href="https://wa.me/917347713573"
-//                 className="btn-outline-gold text-center w-full sm:w-auto"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="inline-flex items-center justify-center gap-2
+//                            border border-rose-400 text-rose-600
+//                            hover:bg-rose-50
+//                            font-medium
+//                            px-6 py-3 rounded-full
+//                            transition"
 //               >
 //                 WhatsApp Order
 //               </a>
 //             </div>
 //           </motion.div>
-
 //         </div>
 //       </div>
 //     </section>
@@ -458,3 +472,7 @@ export default About;
 // };
 
 // export default About;
+
+
+
+

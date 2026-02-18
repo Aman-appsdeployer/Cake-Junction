@@ -4,15 +4,18 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm transition
-     ${
-       isActive
-         ? "text-rose-600 font-semibold"
-         : "text-gray-600 hover:text-rose-600"
-     }`;
+    `text-sm transition ${
+      isActive
+        ? "text-rose-600 font-semibold"
+        : "text-gray-600 hover:text-rose-600"
+    }`;
 
   return (
-    <footer className="bg-white border-rose-100 pt-14 sm:pt-16 pb-8">
+    <footer
+      role="contentinfo"
+      aria-label="Cake Junction bakery website footer"
+      className="bg-white border-rose-100 pt-14 sm:pt-16 pb-8"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ================= TOP GRID ================= */}
@@ -20,28 +23,38 @@ const Footer = () => {
 
           {/* ================= BRAND ================= */}
           <div className="lg:col-span-2">
-            <NavLink to="/" className="flex items-center gap-3">
+            <NavLink
+              to="/"
+              aria-label="Cake Junction homepage"
+              className="flex items-center gap-3"
+            >
               <img
                 src={logo}
-                alt="Cake Junction Logo"
+                alt="Cake Junction online cake bakery logo"
                 className="h-20 sm:h-24 object-contain"
+                loading="lazy"
               />
             </NavLink>
 
+            {/* SEO content */}
             <p className="text-sm text-gray-600 mt-4 max-w-sm leading-relaxed">
-              Premium handcrafted cakes made with love for every special occasion.
-              Order delicious cakes online with fast delivery.
+              Cake Junction is an online cake bakery offering custom birthday
+              cakes, wedding cakes, and designer cakes with same-day cake
+              delivery. Freshly baked with premium ingredients for every
+              celebration.
             </p>
 
             {/* SOCIAL */}
-            <div className="flex gap-4 mt-5">
+            <div
+              className="flex gap-4 mt-5"
+              aria-label="Cake Junction social media links"
+            >
               <a
                 href="https://www.instagram.com/cakejunction7/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white shadow-sm
-                           hover:shadow-md hover:-translate-y-0.5
-                           transition"
+                aria-label="Cake Junction Instagram"
+                className="p-2 rounded-full bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <Instagram className="w-5 h-5 text-rose-600" />
               </a>
@@ -50,9 +63,8 @@ const Footer = () => {
                 href="https://www.facebook.com/share/1BwThQmjmD/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white shadow-sm
-                           hover:shadow-md hover:-translate-y-0.5
-                           transition"
+                aria-label="Cake Junction Facebook"
+                className="p-2 rounded-full bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <Facebook className="w-5 h-5 text-rose-600" />
               </a>
@@ -61,68 +73,67 @@ const Footer = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white shadow-sm
-                           hover:shadow-md hover:-translate-y-0.5
-                           transition"
+                aria-label="Cake Junction YouTube"
+                className="p-2 rounded-full bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <Youtube className="w-5 h-5 text-rose-600" />
               </a>
             </div>
           </div>
 
-          {/* ================= SHOP ================= */}
-          <div>
-            <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
-              Shop
-            </h4>
+          {/* ================= SHOP NAV ================= */}
+          <nav aria-label="Shop cake categories">
+            <h2 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+              Shop Cakes
+            </h2>
             <ul className="space-y-2">
               <li><NavLink to="/shop" className={linkClass}>All Cakes</NavLink></li>
               <li><NavLink to="/shop/birthday" className={linkClass}>Birthday Cakes</NavLink></li>
               <li><NavLink to="/shop/wedding" className={linkClass}>Wedding Cakes</NavLink></li>
               <li><NavLink to="/shop/custom" className={linkClass}>Custom Cakes</NavLink></li>
             </ul>
-          </div>
+          </nav>
 
-          {/* ================= SUPPORT ================= */}
-          <div>
-            <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
-              Support
-            </h4>
+          {/* ================= SUPPORT NAV ================= */}
+          <nav aria-label="Customer support links">
+            <h2 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+              Customer Support
+            </h2>
             <ul className="space-y-2">
-              <li><NavLink to="/contact" className={linkClass}>Contact Us</NavLink></li>
-              <li><NavLink to="/faq" className={linkClass}>FAQ</NavLink></li>
-              <li><NavLink to="/track-order" className={linkClass}>Track Order</NavLink></li>
+              <li><NavLink to="/contact" className={linkClass}>Contact Bakery</NavLink></li>
+              <li><NavLink to="/faq" className={linkClass}>Cake FAQs</NavLink></li>
+              <li><NavLink to="/track-order" className={linkClass}>Track Cake Order</NavLink></li>
               <li><NavLink to="/support" className={linkClass}>Help Center</NavLink></li>
             </ul>
-          </div>
+          </nav>
 
-          {/* ================= LEGAL ================= */}
-          <div>
-            <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
-              Legal
-            </h4>
+          {/* ================= LEGAL NAV ================= */}
+          <nav aria-label="Legal policies">
+            <h2 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+              Legal Policies
+            </h2>
             <ul className="space-y-2">
               <li><NavLink to="/privacy-policy" className={linkClass}>Privacy Policy</NavLink></li>
               <li><NavLink to="/terms" className={linkClass}>Terms & Conditions</NavLink></li>
               <li><NavLink to="/refund-policy" className={linkClass}>Refund Policy</NavLink></li>
               <li><NavLink to="/shipping-policy" className={linkClass}>Shipping Policy</NavLink></li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* ================= NEWSLETTER ================= */}
-        <div className="mt-12 bg-white border border-rose-100
-                        rounded-2xl p-5 sm:p-6
-                        flex flex-col md:flex-row
-                        items-start md:items-center
-                        justify-between gap-4 shadow-sm">
+        <form
+          className="mt-12 bg-white border border-rose-100 rounded-2xl
+                     p-5 sm:p-6 flex flex-col md:flex-row
+                     items-start md:items-center justify-between
+                     gap-4 shadow-sm"
+          aria-label="Subscribe to cake offers newsletter"
+        >
+          <label className="font-semibold text-gray-900 text-sm sm:text-base">
+            Subscribe for cake offers & bakery updates
+          </label>
 
-          <p className="font-semibold text-gray-900 text-sm sm:text-base">
-            Subscribe for special offers & cake updates 
-          </p>
-
-          <div className="w-full md:w-auto
-                          flex items-center gap-2
+          <div className="w-full md:w-auto flex items-center gap-2
                           bg-rose-50 border border-rose-200
                           rounded-full px-4 py-2">
 
@@ -130,11 +141,15 @@ const Footer = () => {
 
             <input
               type="email"
-              placeholder="Enter your email"
+              required
+              placeholder="Enter your email address"
+              aria-label="Email for cake offers"
               className="bg-transparent outline-none text-sm flex-1 min-w-0"
             />
 
             <button
+              type="submit"
+              aria-label="Subscribe to cake newsletter"
               className="bg-rose-500 hover:bg-rose-600
                          text-white text-sm font-medium
                          px-4 py-1.5 rounded-full transition"
@@ -142,12 +157,11 @@ const Footer = () => {
               Subscribe
             </button>
           </div>
-        </div>
+        </form>
 
         {/* ================= COPYRIGHT ================= */}
-        <div className="mt-10 pt-6 border-t border-rose-100
-                        text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Cake Junction. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-rose-100 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Cake Junction Bakery — Online Cake Delivery. All rights reserved.
         </div>
 
       </div>
@@ -160,60 +174,87 @@ export default Footer;
 
 
 
+
+
+
+
+// import logo from "@/assets/Logo-1.png";
 // import { Facebook, Instagram, Mail, Youtube } from "lucide-react";
 // import { NavLink } from "react-router-dom";
 
-// import logo from "@/assets/Logo-1.png";
-
 // const Footer = () => {
-//   const linkClass = ({ isActive }) =>
-//     `transition text-sm
-//      ${isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-primary"}
-//     `;
+//   const linkClass = ({ isActive }: { isActive: boolean }) =>
+//     `text-sm transition
+//      ${
+//        isActive
+//          ? "text-rose-600 font-semibold"
+//          : "text-gray-600 hover:text-rose-600"
+//      }`;
 
 //   return (
-//     <footer className="bg-background border-t pt-16 pb-8">
-//       <div className="container mx-auto px-4">
+//     <footer className="bg-white border-rose-100 pt-14 sm:pt-16 pb-8">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-//         {/* TOP GRID */}
-//         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+//         {/* ================= TOP GRID ================= */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
 
-//           {/* BRAND */}
+//           {/* ================= BRAND ================= */}
 //           <div className="lg:col-span-2">
 //             <NavLink to="/" className="flex items-center gap-3">
 //               <img
 //                 src={logo}
 //                 alt="Cake Junction Logo"
-//                 className=" h-28 object-contain bg-transparent mix-blend-multiply"
+//                 className="h-20 sm:h-24 object-contain"
 //               />
 //             </NavLink>
 
-//             <p className="text-sm text-muted-foreground mt-4 max-w-sm">
+//             <p className="text-sm text-gray-600 mt-4 max-w-sm leading-relaxed">
 //               Premium handcrafted cakes made with love for every special occasion.
 //               Order delicious cakes online with fast delivery.
 //             </p>
 
 //             {/* SOCIAL */}
-//             <div className="flex gap-4 mt-5 text-muted-foreground">
-//               <a href="https://www.instagram.com/cakejunction7/" target="_blank" rel="noopener noreferrer"
-//                 className="hover:text-primary transition hover:scale-110">
-//                 <Instagram />
+//             <div className="flex gap-4 mt-5">
+//               <a
+//                 href="https://www.instagram.com/cakejunction7/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="p-2 rounded-full bg-white shadow-sm
+//                            hover:shadow-md hover:-translate-y-0.5
+//                            transition"
+//               >
+//                 <Instagram className="w-5 h-5 text-rose-600" />
 //               </a>
-//               <a href="https://www.facebook.com/share/1BwThQmjmD/" target="_blank" rel="noopener noreferrer"
-//                 className="hover:text-primary transition hover:scale-110">
-//                 <Facebook />
+
+//               <a
+//                 href="https://www.facebook.com/share/1BwThQmjmD/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="p-2 rounded-full bg-white shadow-sm
+//                            hover:shadow-md hover:-translate-y-0.5
+//                            transition"
+//               >
+//                 <Facebook className="w-5 h-5 text-rose-600" />
 //               </a>
-//               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
-//                 className="hover:text-primary transition hover:scale-110">
-//                 <Youtube />
+
+//               <a
+//                 href="https://youtube.com"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="p-2 rounded-full bg-white shadow-sm
+//                            hover:shadow-md hover:-translate-y-0.5
+//                            transition"
+//               >
+//                 <Youtube className="w-5 h-5 text-rose-600" />
 //               </a>
-              
 //             </div>
 //           </div>
 
-//           {/* SHOP */}
+//           {/* ================= SHOP ================= */}
 //           <div>
-//             <h4 className="font-serif font-bold mb-4">Shop</h4>
+//             <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+//               Shop
+//             </h4>
 //             <ul className="space-y-2">
 //               <li><NavLink to="/shop" className={linkClass}>All Cakes</NavLink></li>
 //               <li><NavLink to="/shop/birthday" className={linkClass}>Birthday Cakes</NavLink></li>
@@ -222,20 +263,24 @@ export default Footer;
 //             </ul>
 //           </div>
 
-//           {/* CUSTOMER SERVICE */}
+//           {/* ================= SUPPORT ================= */}
 //           <div>
-//             <h4 className="font-serif font-bold mb-4">Customer Service</h4>
+//             <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+//               Support
+//             </h4>
 //             <ul className="space-y-2">
 //               <li><NavLink to="/contact" className={linkClass}>Contact Us</NavLink></li>
 //               <li><NavLink to="/faq" className={linkClass}>FAQ</NavLink></li>
 //               <li><NavLink to="/track-order" className={linkClass}>Track Order</NavLink></li>
-//               <li><NavLink to="/support" className={linkClass}>Support</NavLink></li>
+//               <li><NavLink to="/support" className={linkClass}>Help Center</NavLink></li>
 //             </ul>
 //           </div>
 
-//           {/* LEGAL */}
+//           {/* ================= LEGAL ================= */}
 //           <div>
-//             <h4 className="font-serif font-bold mb-4">Legal</h4>
+//             <h4 className="font-bold text-gray-900 mb-4 text-sm sm:text-base">
+//               Legal
+//             </h4>
 //             <ul className="space-y-2">
 //               <li><NavLink to="/privacy-policy" className={linkClass}>Privacy Policy</NavLink></li>
 //               <li><NavLink to="/terms" className={linkClass}>Terms & Conditions</NavLink></li>
@@ -245,22 +290,43 @@ export default Footer;
 //           </div>
 //         </div>
 
-//         {/* NEWSLETTER */}
-//         <div className="mt-12 bg-secondary rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-//           <p className="font-medium"> Subscribe for special offers & updates</p>
-//           <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
-//             <Mail className="w-4 h-4 text-muted-foreground" />
+//         {/* ================= NEWSLETTER ================= */}
+//         <div className="mt-12 bg-white border border-rose-100
+//                         rounded-2xl p-5 sm:p-6
+//                         flex flex-col md:flex-row
+//                         items-start md:items-center
+//                         justify-between gap-4 shadow-sm">
+
+//           <p className="font-semibold text-gray-900 text-sm sm:text-base">
+//             Subscribe for special offers & cake updates 
+//           </p>
+
+//           <div className="w-full md:w-auto
+//                           flex items-center gap-2
+//                           bg-rose-50 border border-rose-200
+//                           rounded-full px-4 py-2">
+
+//             <Mail className="w-4 h-4 text-rose-500" />
+
 //             <input
 //               type="email"
 //               placeholder="Enter your email"
-//               className="bg-transparent outline-none px-2 text-sm"
+//               className="bg-transparent outline-none text-sm flex-1 min-w-0"
 //             />
-//             <button className="btn-gold ml-2">Subscribe</button>
+
+//             <button
+//               className="bg-rose-500 hover:bg-rose-600
+//                          text-white text-sm font-medium
+//                          px-4 py-1.5 rounded-full transition"
+//             >
+//               Subscribe
+//             </button>
 //           </div>
 //         </div>
 
-//         {/* COPYRIGHT */}
-//         <div className="mt-10 pt-6 border-t text-center text-sm text-muted-foreground">
+//         {/* ================= COPYRIGHT ================= */}
+//         <div className="mt-10 pt-6 border-t border-rose-100
+//                         text-center text-sm text-gray-500">
 //           © {new Date().getFullYear()} Cake Junction. All rights reserved.
 //         </div>
 
@@ -270,15 +336,6 @@ export default Footer;
 // };
 
 // export default Footer;
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,65 +1,72 @@
 import { motion } from "framer-motion";
 
+import cake9 from "@/assets/img16.jpg";
+import cake10 from "@/assets/img17.jpg";
 import cake1 from "@/assets/img2.jpg";
 import cake2 from "@/assets/img3.jpg";
 import cake3 from "@/assets/img4.jpg";
 import cake6 from "@/assets/img6.jpg";
 import cake7 from "@/assets/img7.jpg";
-import cake8 from "@/assets/img8.jpg";
+import { default as cake11, default as cake8 } from "@/assets/img8.jpg";
 import cake4 from "@/assets/venue-1.jpg";
 import cake5 from "@/assets/venue-4.jpg";
-import cake9 from "@/assets/img16.jpg";
-import cake10 from "@/assets/img17.jpg";
-import cake11 from "@/assets/img8.jpg";  
 
-
+/* ✅ SEO ALT TEXT UPGRADE */
 const images = [
-  { src: cake1, alt: "Chocolate Cake" },
-  { src: cake2, alt: "Birthday Cake" },
-  { src: cake3, alt: "Wedding Cake" },
-  { src: cake4, alt: "Cupcakes" },
-  { src: cake5, alt: "Fresh Pastries" },
-  { src: cake6, alt: "Custom Designed Cake" },
-  { src: cake7, alt: "Fruit Tart" },
-  { src: cake8, alt: "Layered Cake" },
-  { src: cake9, alt: "Red Velvet Cake" },
-  { src: cake10, alt: "Lemon Drizzle Cake" },
-  { src: cake11, alt: "Vanilla Bean Cake" },
+  { src: cake1, alt: "Chocolate birthday cake design by Cake Junction bakery" },
+  { src: cake2, alt: "Custom birthday celebration cake" },
+  { src: cake3, alt: "Elegant wedding cake with layered frosting" },
+  { src: cake4, alt: "Decorated cupcakes for party orders" },
+  { src: cake5, alt: "Fresh baked pastries and desserts" },
+  { src: cake6, alt: "Custom designer theme cake" },
+  { src: cake7, alt: "Fruit tart dessert from bakery" },
+  { src: cake8, alt: "Multi layer celebration cake" },
+  { src: cake9, alt: "Red velvet premium cake" },
+  { src: cake10, alt: "Lemon drizzle flavored cake" },
+  { src: cake11, alt: "Vanilla bean custom cake" },
 ];
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="sm:py-16 md:py-20 bg-white">
+    <section
+      id="gallery"
+      aria-label="Cake Junction bakery cake gallery and dessert designs"
+      className="sm:py-16 md:py-20 bg-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ================= HEADER ================= */}
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-14"
         >
-          <p className="text-rose-600 font-semibold text-sm sm:text-base mb-2">
-            Our Creations
+          <p className="text-rose-600 font-semibold text-xl sm:text-2xl mb-2">
+            Cake Design Gallery
           </p>
 
+          {/* SEO heading */}
           <h2 className="font-bold text-gray-900 leading-tight
                          text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            Sweet Moments by Cake Junction
+            Custom Cakes & Bakery Creations by Cake Junction
           </h2>
 
+          {/* SEO paragraph */}
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
-            Take a look at some of our handcrafted cakes and desserts,
-            baked with love and designed to delight every celebration.
+            Explore our collection of custom birthday cakes, wedding cakes,
+            designer cakes, cupcakes, and premium desserts. Each cake is
+            handcrafted with fresh ingredients for beautiful and delicious
+            celebrations.
           </p>
-        </motion.div>
+        </motion.header>
 
         {/* ================= MASONRY ================= */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
 
           {images.map((image, index) => (
-            <motion.div
+            <motion.figure
               key={image.alt}
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -87,14 +94,14 @@ const Gallery = () => {
                                 transition duration-300
                                 flex items-end">
 
-                  <div className="p-5">
+                  <figcaption className="p-5">
                     <span className="inline-block
                                      bg-rose-500/90 text-white
                                      text-xs sm:text-sm font-semibold
                                      px-3 py-1 rounded-full">
                       {image.alt}
                     </span>
-                  </div>
+                  </figcaption>
                 </div>
 
                 {/* hover ring */}
@@ -102,7 +109,7 @@ const Gallery = () => {
                                 ring-0 group-hover:ring-2
                                 ring-rose-400/40 transition" />
               </div>
-            </motion.div>
+            </motion.figure>
           ))}
 
         </div>
@@ -117,8 +124,6 @@ export default Gallery;
 
 
 
-
-
 // import { motion } from "framer-motion";
 
 // import cake1 from "@/assets/img2.jpg";
@@ -129,6 +134,10 @@ export default Gallery;
 // import cake8 from "@/assets/img8.jpg";
 // import cake4 from "@/assets/venue-1.jpg";
 // import cake5 from "@/assets/venue-4.jpg";
+// import cake9 from "@/assets/img16.jpg";
+// import cake10 from "@/assets/img17.jpg";
+// import cake11 from "@/assets/img8.jpg";  
+
 
 // const images = [
 //   { src: cake1, alt: "Chocolate Cake" },
@@ -139,57 +148,89 @@ export default Gallery;
 //   { src: cake6, alt: "Custom Designed Cake" },
 //   { src: cake7, alt: "Fruit Tart" },
 //   { src: cake8, alt: "Layered Cake" },
+//   { src: cake9, alt: "Red Velvet Cake" },
+//   { src: cake10, alt: "Lemon Drizzle Cake" },
+//   { src: cake11, alt: "Vanilla Bean Cake" },
 // ];
 
 // const Gallery = () => {
 //   return (
-//     <section id="gallery" className=" bg-white">
-//       <div className="container mx-auto px-4">
+//     <section id="gallery" className="sm:py-16 md:py-20 bg-white">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
 //         {/* ================= HEADER ================= */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 20 }}
 //           whileInView={{ opacity: 1, y: 0 }}
 //           viewport={{ once: true }}
-//           className="text-center mb-16"
+//           transition={{ duration: 0.6 }}
+//           className="text-center mb-10 md:mb-14"
 //         >
-//           <p className="section-title">Our Creations</p>
-//           <h2 className="section-heading">
+//           <p className="text-rose-600 font-semibold text-xl sm:text-2xl mb-2">
+//             Our Creations
+//           </p>
+
+//           <h2 className="font-bold text-gray-900 leading-tight
+//                          text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
 //             Sweet Moments by Cake Junction
 //           </h2>
-//           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+
+//           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
 //             Take a look at some of our handcrafted cakes and desserts,
 //             baked with love and designed to delight every celebration.
 //           </p>
 //         </motion.div>
 
-//         {/* ================= MASONRY GRID ================= */}
+//         {/* ================= MASONRY ================= */}
 //         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+
 //           {images.map((image, index) => (
 //             <motion.div
 //               key={image.alt}
-//               initial={{ opacity: 0, scale: 0.95 }}
+//               initial={{ opacity: 0, scale: 0.96 }}
 //               whileInView={{ opacity: 1, scale: 1 }}
 //               viewport={{ once: true }}
-//               transition={{ delay: index * 0.08 }}
-//               className="break-inside-avoid overflow-hidden rounded-2xl group cursor-pointer shadow-lg"
+//               transition={{ delay: index * 0.06 }}
+//               className="break-inside-avoid group cursor-pointer"
 //             >
-//               <div className="relative overflow-hidden">
+//               <div className="relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition">
+
+//                 {/* IMAGE */}
 //                 <img
 //                   src={image.src}
 //                   alt={image.alt}
-//                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+//                   loading="lazy"
+//                   className="w-full h-auto object-cover
+//                              transition-transform duration-700
+//                              group-hover:scale-110"
 //                 />
 
-//                 {/* Hover Overlay */}
-//                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-//                   <span className="text-white text-lg font-semibold">
-//                     {image.alt}
-//                   </span>
+//                 {/* OVERLAY */}
+//                 <div className="absolute inset-0
+//                                 bg-gradient-to-t
+//                                 from-black/70 via-black/20 to-transparent
+//                                 opacity-0 group-hover:opacity-100
+//                                 transition duration-300
+//                                 flex items-end">
+
+//                   <div className="p-5">
+//                     <span className="inline-block
+//                                      bg-rose-500/90 text-white
+//                                      text-xs sm:text-sm font-semibold
+//                                      px-3 py-1 rounded-full">
+//                       {image.alt}
+//                     </span>
+//                   </div>
 //                 </div>
+
+//                 {/* hover ring */}
+//                 <div className="absolute inset-0 rounded-2xl
+//                                 ring-0 group-hover:ring-2
+//                                 ring-rose-400/40 transition" />
 //               </div>
 //             </motion.div>
 //           ))}
+
 //         </div>
 
 //       </div>
@@ -198,3 +239,8 @@ export default Gallery;
 // };
 
 // export default Gallery;
+
+
+
+
+
